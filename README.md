@@ -1,3 +1,10 @@
+In the main folder is the react application running on thor.fabianschulz.ch, below is more information about react.
+In the server directory is the php code to access the database.
+In the pi directory is the code for the raspberry pi pythons scripts.
+In the arduino directory is the code for the arduino.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
