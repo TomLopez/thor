@@ -1,0 +1,26 @@
+requesting
+in while loop
+start
+catastrophic error
+HTTPConnectionPool(host='thor.fabianschulz.ch', port=80): Max retries exceeded with url: /fillBin.php?id=1&fill=75&pw=thorSmartBin (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xb64ac7f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+waiting
+wake up
+in while loop
+start
+catastrophic error
+HTTPConnectionPool(host='thor.fabianschulz.ch', port=80): Max retries exceeded with url: /fillBin.php?id=1&fill=75&pw=thorSmartBin (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xb64acc70>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+waiting
+wake up
+in while loop
+start
+catastrophic error
+HTTPConnectionPool(host='thor.fabianschulz.ch', port=80): Max retries exceeded with url: /fillBin.php?id=1&fill=75&pw=thorSmartBin (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xb64ac650>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+waiting
+wake up
+in while loop
+start
+end
+not good
+waiting
+wake up
+done
