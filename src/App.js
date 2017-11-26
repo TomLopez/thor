@@ -36,11 +36,8 @@ class App extends Component {
     let binRender = [];
     for(let bin in this.state.bins) {
       console.log("bin: "+bin);
-        let newDate = new Date();
-        newDate.setTime(this.state.bins[bin][3]*1000);
-        let dateString = newDate.toUTCString();
       binRender.push(
-        <div key={this.state.bins[bin][0]} className="bin">{this.state.bins[bin][0]+" has "+this.state.bins[bin][1]+" cm space and the battery is at "+this.state.bins[bin][2]/100+" volts. Last update: "+dateString}</div>
+        <div key={this.state.bins[bin][0]} className="bin">{this.state.bins[bin][0]+" has "+this.state.bins[bin][1]+" cm space and the battery is at "+this.state.bins[bin][2]/100+" volts. Last update: "+this.state.bins[bin][3]}</div>
       )
     }
     return binRender;

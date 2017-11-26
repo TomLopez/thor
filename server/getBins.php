@@ -1,8 +1,5 @@
 <?php
-$servername = "contactf.mysql.db.internal";
-$username = "contactf_thorU";
-$password = "eP6NsYY8";
-$dbname = "contactf_thor";
+require 'DBlogin.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
