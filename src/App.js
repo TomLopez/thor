@@ -37,7 +37,7 @@ class App extends Component {
     for(let bin in this.state.bins) {
       console.log("bin: "+bin);
       binRender.push(
-        <div key={this.state.bins[bin][0]} className="bin">{this.state.bins[bin][0]+" has "+this.state.bins[bin][1]+" cm space and the battery is at "+this.state.bins[bin][2]/100+" volts. Last update: "+this.state.bins[bin][3]}</div>
+        <div key={this.state.bins[bin][0]} className="bin">{this.state.bins[bin][0]+" has "+this.state.bins[bin][1]+" cm space and the battery is at "+this.state.bins[bin][2]/100+" volts. Total bottles crushed: "+this.state.bins[bin][3]+". Last update: "+this.state.bins[bin][4]}</div>
       )
     }
     return binRender;

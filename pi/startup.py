@@ -21,6 +21,12 @@ time.sleep(1)
 battery = bus.read_byte(address)
 print "battery: "
 print battery
+time.sleep(1)
+bus.write_byte(address, 3)
+time.sleep(1)
+bCrushed = bus.read_byte(address)
+print "bottles crushed: "
+print bCrushed
 print "got data"
 
 print "requesting"
@@ -30,12 +36,13 @@ while (loopVar==0):
 	print "in while loop"
 	print "start"
 	try:
-		url = "http://thor.fabianschulz.ch/fillBin.php?id=1&fill="+str(fillState)+"&battery="+str(battery)+"&pw=thorSmartBin"
+		url = "http://thor.fabianschulz.ch/fillBin.php?id=1&fill="+str(fillState)+"&battery="+str(battery)+"&bCrushed="+str(bCrushed)+"&pw=thorSmartBin"
+		print url
 		r = requests.get(url, timeout=1)
 		print "end"
 		if r.content=="done":
-			call("sudo poweroff", shell=True)
 			print "good"
+			call("sudo poweroff", shell=True)
 		else:
 			print "not good"
 			loopVar=1

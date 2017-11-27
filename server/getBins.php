@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
         if($i!=0) {
             echo ', ';
         }
-        echo '"'.$row["id"].'":["'.$row["name"].'", "'.$row["volume"].'", "'.$row["battery"].'", "'.$row["timestamp"].'"]';
+        echo '"'.$row["id"].'":["'.$row["name"].'", "'.$row["volume"].'", "'.$row["battery"].'", "'.$row["bCrushed"].'", "'.$row["timestamp"].'"]';
         $i++;
     }
     echo '}';
