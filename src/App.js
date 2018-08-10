@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
+import thorPetLogo from './thorPetLogo.png'
+import thorPetLogo2 from './thorPet2.png'
 import './App.css';
 
 import 'whatwg-fetch'
@@ -21,7 +23,9 @@ class App extends Component {
   update() {
     console.log("updating");
     this.setState({updating: 1});
-    fetch("https://thor.fabianschulz.ch/getBins.php").then(response => {
+    let proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        targetUrl = 'https://thor.fabianschulz.ch/getBins.php';
+      fetch(targetUrl).then(response => {
           console.log(response);
           return response.json();
         })
@@ -34,11 +38,30 @@ class App extends Component {
 
   renderBins() {
     let binRender = [];
+    let i=0;
     for(let bin in this.state.bins) {
       console.log("bin: "+bin);
       binRender.push(
-        <div key={this.state.bins[bin][0]} className="bin">{this.state.bins[bin][0]+" has "+this.state.bins[bin][1]+" cm space and the battery is at "+this.state.bins[bin][2]/100+" volts. Total bottles crushed: "+this.state.bins[bin][3]+". Last update: "+this.state.bins[bin][4]}</div>
-      )
+        <div key={this.state.bins[bin][0]} className="bin">
+            {i%2===0?<img src={thorPetLogo} className="Bin-logo" alt="logo" />:<img src={thorPetLogo2} className="Bin-logo" alt="logo" />}
+            <div className="binTitle">
+                {this.state.bins[bin][0]}
+            </div>
+            <div className="binElement spaceLeft">
+                <div className="elementContainer"><div className="leftDiv">{"Full at: "}</div><div className="rightDiv">{this.state.bins[bin][1] + " %"}</div></div>
+            </div>
+            <div className="binElement batteryVoltage">
+                <div className="elementContainer"><div className="leftDiv">{"Battery voltage: "}</div><div className="rightDiv">{this.state.bins[bin][2]/10 + " V"}</div></div>
+            </div>
+            <div className="binElement bottlesCrushed">
+                <div className="elementContainer"><div className="leftDiv">{"Total bottles crushed: "}</div><div className="rightDiv">{this.state.bins[bin][3]}</div></div>
+            </div>
+            <div className="binElement timestamp">
+                <div className="elementContainer"><div className="leftDiv">{"Last update received: "}</div><div className="rightDiv">{this.state.bins[bin][4]}</div></div>
+            </div>
+        </div>
+      );
+        i++;
     }
     return binRender;
   }
@@ -50,9 +73,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to the Thor Trash bin Manager</h1>
         </header>
-        <p className="App-intro">
+        <div className="AppContainer">
           {this.renderBins()}
-        </p>
+        </div>
         {this.state.updating?"updating":null}
       </div>
     );

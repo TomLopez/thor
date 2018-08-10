@@ -42,7 +42,7 @@ while (loopVar==0):
 		print "end"
 		if r.content=="done":
 			print "good"
-			call("sudo poweroff", shell=True)
+			call("sudo shutdown now", shell=True)
 		else:
 			print "not good"
 			loopVar=1

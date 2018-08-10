@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #ededed;
+  height: 100%;
 }
 
 .App-logo {
@@ -8,21 +10,89 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #222222;
   height: 150px;
   padding: 20px;
   color: white;
+}
+
+.binTitle {
+  text-align: left;
+  font-size: large;
+  font-weight: 600;
+  margin: 10px 0 10px 0;
+  padding: 10px 0 0 0;
+}
+
+.binElement {
+  text-align: left;
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.AppContainer {
+  padding: 20px 50px 20px 50px;
+  height: 100%;
+}
+
+.bin {
+  background-color: white;
+  color: #222222;
+  margin: 20px 40px 0 0;
+  padding: 0 40px 0 0;
+  width: 500px;
+  float: left;
+}
+
+.Bin-logo {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.leftDiv {
+  float: left;
+}
+
+.elementContainer {
+  width: 100%;
+  padding: 0 20px 0 0;
+  height: 20px;
+}
+
+.rightDiv {
+  float: right;
+  width: 160px;
+}
+
+#root {
+  height: 1200px;
+  width: 650px;
+}
+
+html, body {
+  height: 1200px;
+  width: 650px;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 500px) {
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    font-family: "Arial";
+  }
 }
